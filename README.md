@@ -15,7 +15,7 @@ git clone http://github.com/Yonaba/delaunay.git
 
 ###Archive
 
-* [zip](https://github.com/Yonaba/delaunay/archive/delaunay-0.1.zip) | [tar.gz](https://github.com/Yonaba/delaunay/archive/delaunay-0.1.tar.gz) | [all](http://github.com/Yonaba/delaunay/tags)
+* [zip](https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.zip) | [tar.gz](https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.tar.gz) | [all](http://github.com/Yonaba/delaunay/tags)
 
 ###LuaRocks
 
