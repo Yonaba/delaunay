@@ -64,8 +64,7 @@ for i, triangle in ipairs(triangles) do
 end
 ````
 
-See the documentation for more details.
-```
+See the [documentation](http://yonaba.github.io/delaunay/doc) for more details.
 
 ##Testing
 ###Specification
