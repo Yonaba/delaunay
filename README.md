@@ -13,7 +13,7 @@ git clone http://github.com/Yonaba/delaunay.git
 
 ###Archive
 
-* [zip](http://github.com/Yonaba/delaunay/archive/3delaunay-0.6.0.zip) | [tar.gz](http://github.com/Yonaba/30log/archive/30log-0.6.0.tar.gz) | [all](http://github.com/Yonaba/30log/tags)
+* [zip]() | [tar.gz]() | [all](http://github.com/Yonaba/delaunay/tags)
 
 ###LuaRocks
 
