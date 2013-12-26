@@ -1,0 +1,6 @@
+*.bat
+ldoc*
+telescope*
+tsc
+config*
+test*
