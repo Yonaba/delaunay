@@ -1,6 +1,3 @@
+*.dll
+*.exe
 *.bat
-ldoc*
-telescope*
-tsc
-config*
-test*
