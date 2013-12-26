@@ -13,7 +13,7 @@ git clone http://github.com/Yonaba/delaunay.git
 
 ###Archive
 
-* [zip]() | [tar.gz]() | [all](http://github.com/Yonaba/delaunay/tags)
+* [zip](https://github.com/Yonaba/delaunay/archive/delaunay-0.1.zip) | [tar.gz](https://github.com/Yonaba/delaunay/archive/delaunay-0.1.tar.gz) | [all](http://github.com/Yonaba/delaunay/tags)
 
 ###LuaRocks
 
@@ -28,7 +28,7 @@ luarocks install --server=http://rocks.moonscript.org/manifests/Yonaba delaunay
 ````
 
 ##Installation
-Copy the file [delaunay.lua](https://github.com/Yonaba/delaunay/blob/master/delaunay.lua) inside your project folder,
+Copy the file [delaunay.lua](delaunay.lua) inside your project folder,
 call it with [require](http://pgl.yoyo.org/luai/i/require) function. It will return the `Delaunay` module, keeping safe the global environment.<br/>
 
 ##Usage
