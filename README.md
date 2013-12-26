@@ -30,7 +30,7 @@ luarocks install --server=http://rocks.moonscript.org/manifests/Yonaba delaunay
 ````
 
 ##Installation
-Copy the file [delaunay.lua](delaunay.lua) inside your project folder,
+Copy the file [delaunay.lua](http://raw.github.com/Yonaba/delaunay/master/delaunay.lua) inside your project folder,
 call it with [require](http://pgl.yoyo.org/luai/i/require) function. It will return the `Delaunay` module, keeping safe the global environment.<br/>
 
 ##Usage
