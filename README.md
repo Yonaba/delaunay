@@ -1,6 +1,8 @@
 Delaunay
 =====
 
+[![Build Status](https://travis-ci.org/Yonaba/delaunay.png)](https://travis-ci.org/Yonaba/delaunay)
+
 *delaunay* is a Lua module for [delaunay triangulation](http://en.wikipedia.org/wiki/Delaunay_triangulation) of a convex polygon.
 
 ##Download
@@ -104,5 +106,3 @@ Copyright (c) 2013 Roland Yonaba
     CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Yonaba/delaunay/trend.png)](https://bitdeli.com/free "Bitdeli Badge")    
