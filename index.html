@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Delaunay by Yonaba</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Delaunay</h1>
+        <p>Delaunay triangulation for convex polygon</p>
+
+        <p class="view"><a href="https://github.com/Yonaba/delaunay">View the Project on GitHub <small>Yonaba/delaunay</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Yonaba/delaunay/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Yonaba/delaunay/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Yonaba/delaunay">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="delaunay" class="anchor" href="#delaunay"><span class="octicon octicon-link"></span></a>Delaunay</h1>
+
+<p><a href="https://travis-ci.org/Yonaba/delaunay"><img src="https://travis-ci.org/Yonaba/delaunay.png" alt="Build Status"></a></p>
+
+<p><em>delaunay</em> is a Lua module for <a href="http://en.wikipedia.org/wiki/Delaunay_triangulation">delaunay triangulation</a> of a convex polygon.</p>
+
+<h2>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<h3>
+<a name="git" class="anchor" href="#git"><span class="octicon octicon-link"></span></a>Git</h3>
+
+<pre><code>git clone http://github.com/Yonaba/delaunay.git
+</code></pre>
+
+<h3>
+<a name="archive" class="anchor" href="#archive"><span class="octicon octicon-link"></span></a>Archive</h3>
+
+<ul>
+<li>
+<a href="https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.zip">zip</a> | <a href="https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.tar.gz">tar.gz</a> | <a href="http://github.com/Yonaba/delaunay/tags">all</a>
+</li>
+</ul><h3>
+<a name="luarocks" class="anchor" href="#luarocks"><span class="octicon octicon-link"></span></a>LuaRocks</h3>
+
+<pre><code>luarocks install delaunay
+</code></pre>
+
+<h3>
+<a name="moonrocks" class="anchor" href="#moonrocks"><span class="octicon octicon-link"></span></a>MoonRocks</h3>
+
+<pre><code>luarocks install --server=http://rocks.moonscript.org/manifests/Yonaba delaunay
+</code></pre>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Copy the file <a href="delaunay.lua">delaunay.lua</a> inside your project folder,
+call it with <a href="http://pgl.yoyo.org/luai/i/require">require</a> function. It will return the <code>Delaunay</code> module, keeping safe the global environment.<br></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>The module provides 3 classes: <br></p>
+
+<ul>
+<li><code>Point</code></li>
+<li><code>Edge</code></li>
+<li><code>Triangle</code></li>
+</ul><p>It also provides a single function named <code>triangulate</code>. This function accepts
+a variable list (<em>vararg</em> <code>...</code>) of instances of class <code>Point</code>. Assuming those 
+points are the vertices of a convex polygon, it returns a table of instances of the class <code>Triangle</code> forming a <em>Delaunay triangulation</em> of the given polygon.</p>
+
+<p>A basic code example:</p>
+
+<div class="highlight highlight-lua"><pre><span class="kd">local</span> <span class="n">Delaunay</span> <span class="o">=</span> <span class="nb">require</span> <span class="s1">'</span><span class="s">Delaunay'</span>
+<span class="kd">local</span> <span class="n">Point</span>    <span class="o">=</span> <span class="n">Delaunay</span><span class="p">.</span><span class="n">Point</span>
+
+<span class="c1">-- Creating 10 random points</span>
+<span class="kd">local</span> <span class="n">points</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span> <span class="k">do</span>
+  <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="nb">math.random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="nb">math.random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1">-- Triangulating de convex polygon made by those points</span>
+<span class="kd">local</span> <span class="n">triangles</span> <span class="o">=</span> <span class="n">Delaunay</span><span class="p">.</span><span class="n">triangulate</span><span class="p">(</span><span class="nb">unpack</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+
+<span class="c1">-- Printing the results</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">triangle</span> <span class="k">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">triangles</span><span class="p">)</span> <span class="k">do</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">triangle</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>See the <a href="http://yonaba.github.io/delaunay/doc">documentation</a> for more details.</p>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<h3>
+<a name="specification" class="anchor" href="#specification"><span class="octicon octicon-link"></span></a>Specification</h3>
+
+<p>This repository include unit tests. You can run them using <a href="https://github.com/norman/telescope">Telescope</a> with the following command from the root foolder:</p>
+
+<pre><code>lua tsc -f specs/*
+</code></pre>
+
+<h3>
+<a name="performance" class="anchor" href="#performance"><span class="octicon octicon-link"></span></a>Performance</h3>
+
+<p>You can run the random performance tests included with the following command from the root folder:</p>
+
+<div class="highlight highlight-lua"><pre><span class="n">lua</span> <span class="n">performance</span><span class="o">/</span><span class="n">bench</span><span class="p">.</span><span class="n">lua</span>
+</pre></div>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>This work is under <a href="http://www.opensource.org/licenses/mit-license.php">MIT-LICENSE</a>.<br>
+Copyright (c) 2013 Roland Yonaba</p>
+
+<pre><code>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Yonaba">Yonaba</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33850683-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
