@@ -1,3 +1,4 @@
+require 'luacov'
 local Point = (require "delaunay").Point
 
 context("Point", function()

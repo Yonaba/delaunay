@@ -1,3 +1,4 @@
+require 'luacov'
 local Point = (require "delaunay").Point
 local Edge  = (require "delaunay").Edge
 

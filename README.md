@@ -2,6 +2,8 @@ Delaunay
 =====
 
 [![Build Status](https://travis-ci.org/Yonaba/delaunay.png)](https://travis-ci.org/Yonaba/delaunay)
+[![Coverage Status](https://coveralls.io/repos/Yonaba/delaunay/badge.png?branch=master)](https://coveralls.io/r/Yonaba/delaunay?branch=master)
+[![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE)
 
 *delaunay* is a Lua module for [delaunay triangulation](http://en.wikipedia.org/wiki/Delaunay_triangulation) of a convex polygon.
 

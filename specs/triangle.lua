@@ -1,3 +1,4 @@
+require 'luacov'
 local make_assertion = (require "telescope").make_assertion
 local Point          = (require "delaunay").Point
 local Edge           = (require "delaunay").Edge

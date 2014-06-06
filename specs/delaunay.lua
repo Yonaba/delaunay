@@ -1,3 +1,4 @@
+require 'luacov'
 local Delaunay       = (require "delaunay")
 local Point          = Delaunay.Point
 local Triangle       = Delaunay.Triangle
