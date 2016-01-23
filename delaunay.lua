@@ -112,7 +112,7 @@ end
 --
 function Edge:getMidPoint()
   local x = self.p1.x + (self.p2.x - self.p1.x) / 2
-  local y = self.p1.x + (self.p2.y - self.p1.y) / 2
+  local y = self.p1.y + (self.p2.y - self.p1.y) / 2
   return x, y
 end
 
@@ -264,7 +264,7 @@ end
 -- @usage
 -- local p1, p2, p3 = Point(), Point(2,0), Point(1,1)
 -- local t = Triangle(p1, p2, p3)
--- print(t:getCircumCircle()) --> 1	0	1
+-- print(t:getCircumCircle()) --> 1  0  1
 --
 function Triangle:getCircumCircle()
   local x, y = self:getCircumCenter()
@@ -278,7 +278,7 @@ end
 -- @usage
 -- local p1, p2, p3 = Point(), Point(2,0), Point(1,1)
 -- local t = Triangle(p1, p2, p3)
--- print(t:getCircumCenter()) --> 1	0
+-- print(t:getCircumCenter()) --> 1  0
 --
 function Triangle:getCircumCenter()
   local p1, p2, p3 = self.p1, self.p2, self.p3
