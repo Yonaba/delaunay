@@ -8,8 +8,8 @@ local function newPoint()
   return Point(x * 1000, y * 1000)
 end
 
-local MAX_POINTS = 1e3
-local N_TESTS    = 10
+local MAX_POINTS = arg[1] or 500
+local N_TESTS    = arg[2] or 10
 
 local function genPoints(n)
   local points = {}
