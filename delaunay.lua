@@ -13,7 +13,7 @@
 local setmetatable = setmetatable
 local tostring     = tostring
 local assert       = assert
-local unpack       = unpack
+local unpack       = unpack or table.unpack
 local remove       = table.remove
 local sqrt         = math.sqrt
 local max          = math.max
