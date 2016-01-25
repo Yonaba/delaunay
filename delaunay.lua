@@ -380,7 +380,8 @@ function Delaunay.triangulate(...)
     if vertex.y > maxY then maxY = vertex.y end
   end
 
-  local dx, dy = maxX - minX, maxY - minY
+	local convex_mult = 1e3
+  local dx, dy = (maxX - minX) * convex_mult, (maxY - minY) * convex_mult
   local deltaMax = max(dx, dy)
   local midx, midy = (minX + maxX) * 0.5, (minY + maxY) * 0.5
 
