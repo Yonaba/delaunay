@@ -2,7 +2,7 @@
 ---------------
 -- ## Delaunay, Lua module for convex polygon triangulation
 -- @author Roland Yonaba
--- @copyright 2013
+-- @copyright 2013-2016
 -- @license MIT
 -- @script delaunay
 
@@ -338,11 +338,13 @@ end
 -- @field Point reference to the `Point` class
 -- @field Edge reference to the `Edge` class
 -- @field Triangle reference to the `Triangle` class
+-- @field convexMultiplier multiplier heuristic for bounding triangle calculation. When small (~1) produces convex-hull, when large, produces concave hulls. Defaults to 1000.
 -- @field _VERSION the version of the current module
 local Delaunay = {
-  Point    = Point,
-  Edge     = Edge,
-  Triangle = Triangle,
+  Point            = Point,
+  Edge             = Edge,
+  Triangle         = Triangle,
+	convexMultiplier = 1e3,
   _VERSION = "0.1"
 }
 
@@ -380,7 +382,7 @@ function Delaunay.triangulate(...)
     if vertex.y > maxY then maxY = vertex.y end
   end
 
-	local convex_mult = 1e3
+	local convex_mult = Delaunay.convexMultiplier
   local dx, dy = (maxX - minX) * convex_mult, (maxY - minY) * convex_mult
   local deltaMax = max(dx, dy)
   local midx, midy = (minX + maxX) * 0.5, (minY + maxY) * 0.5
