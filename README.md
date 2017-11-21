@@ -7,35 +7,35 @@ Delaunay
 
 *delaunay* is a Lua module for [delaunay triangulation](http://en.wikipedia.org/wiki/Delaunay_triangulation) of a convex polygon.
 
-##Download
+## Download
 
-###Git
+### Git
 
 ````
 git clone http://github.com/Yonaba/delaunay.git
 ````
 
-###Archive
+### Archive
 
 * [zip](https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.zip) | [tar.gz](https://github.com/Yonaba/delaunay/archive/delaunay-0.1-1.tar.gz) | [all](http://github.com/Yonaba/delaunay/tags)
 
-###LuaRocks
+### LuaRocks
 
 ````
 luarocks install delaunay
 ````
 
-###MoonRocks
+### MoonRocks
 
 ````
 luarocks install --server=http://rocks.moonscript.org/manifests/Yonaba delaunay
 ````
 
-##Installation
+## Installation
 Copy the file [delaunay.lua](http://raw.github.com/Yonaba/delaunay/master/delaunay.lua) inside your project folder,
 call it with [require](http://pgl.yoyo.org/luai/i/require) function. It will return the `Delaunay` module, keeping safe the global environment.<br/>
 
-##Usage
+## Usage
 
 The module provides 3 classes: <br/> 
 * `Point`
@@ -68,8 +68,8 @@ end
 
 See the [documentation](http://yonaba.github.io/delaunay/doc) for more details.
 
-##Testing
-###Specification
+## Testing
+### Specification
 
 This repository include unit tests. You can run them using [Telescope](https://github.com/norman/telescope) with the following command from the root foolder:
 
@@ -77,7 +77,7 @@ This repository include unit tests. You can run them using [Telescope](https://g
 lua tsc -f specs/*
 ```
 
-###Performance
+### Performance
 
 You can run the random performance tests included with the following command from the root folder:
 
@@ -85,7 +85,7 @@ You can run the random performance tests included with the following command fro
 lua performance/bench.lua
 ````
 
-##License
+## License
 This work is under [MIT-LICENSE](http://www.opensource.org/licenses/mit-license.php).<br/>
 Copyright (c) 2013 Roland Yonaba
 
